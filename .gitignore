@@ -17,6 +17,7 @@ enriquecidos.csv
 output.csv
 *.csv
 *.xlsx
+docs/build/
 
 # Input csv generation
 scripts/

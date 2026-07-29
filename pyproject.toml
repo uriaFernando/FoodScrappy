@@ -12,6 +12,10 @@ requires-python = ">=3.10"
 dev = [
     "coverage>=7.0",
 ]
+docs = [
+    "sphinx>=7.0",
+    "sphinx-rtd-theme>=2.0",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
