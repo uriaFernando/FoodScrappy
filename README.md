@@ -22,7 +22,7 @@ Prepare an input CSV with `name` and `location` columns:
 
 ```csv
 name,location
-Casa Paco,Gijón
+Casa Paco,Oviedo
 ```
 
 Run enrichment:
@@ -65,3 +65,30 @@ python -m unittest discover
 ```
 
 CI runs unit tests, generates `coverage.xml`, uploads it as an artifact, and sends static analysis plus coverage to SonarCloud.
+
+## Documentation
+
+Project documentation is generated with Sphinx from the source docstrings and files under `docs/source`.
+The GitHub Actions workflow builds the documentation on pull requests and publishes it to GitHub Pages on pushes to `main`.
+
+## Citation
+
+Citation metadata is available in [`CITATION.cff`](CITATION.cff). GitHub can use this file to show a "Cite this repository" action on the repository page.
+
+## How to contribute
+
+Contributions are welcome. Please keep changes focused and include tests for new behavior or bug fixes.
+
+Recommended local workflow:
+
+```powershell
+python -m pip install -e ".[dev,docs]"
+python -m unittest discover
+python -m sphinx -W -b html docs/source docs/build/html
+```
+
+Before opening a pull request, make sure the CLI behavior remains compatible with:
+
+```powershell
+python -m scrappy enrich restaurants.csv --out enriched_restaurants.csv --region ES
+```
