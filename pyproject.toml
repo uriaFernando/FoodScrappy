@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FoodScrappy"
+version = "0.1.0"
+description = "Restaurant enrichment CLI for official websites, social profiles, and delivery links."
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "coverage>=7.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["scrappy"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
