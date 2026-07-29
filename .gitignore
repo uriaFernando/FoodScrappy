@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local outputs
+enriquecidos.csv
+output.csv
+*.csv
+*.xlsx
+docs/build/
+
+# Input csv generation
+scripts/
