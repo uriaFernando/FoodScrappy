@@ -19,7 +19,7 @@ class ExplodingEnricher:
 
 class CliTests(unittest.TestCase):
     def test_enrich_continues_and_writes_row_when_restaurant_crashes(self):
-        with tempfile.TemporaryDirectory() as temp_dir:
+        with tempfile.TemporaryDirectory(dir=Path.cwd()) as temp_dir:
             input_path = Path(temp_dir) / "restaurants.csv"
             output_path = Path(temp_dir) / "out.csv"
             input_path.write_text("name,location\nCasa Paco,Gijón\n", encoding="utf-8")
